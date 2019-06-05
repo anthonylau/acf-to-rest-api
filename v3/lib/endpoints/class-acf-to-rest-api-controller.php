@@ -49,6 +49,7 @@ if ( ! class_exists( 'ACF_To_REST_API_Controller' ) ) {
 		}
 
 		public function register_field() {
+			$type = ( 'post_tag' === $this->type ) ? 'tag' : $this->type;
 			register_rest_field( $this->type, 'acf', array(
 				'get_callback' => array( $this, 'register_field_callback' ),
 				'schema' => array(
